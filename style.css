@@ -1,0 +1,74 @@
+/* Set the background color of the body to a light beige */
+body {
+  background-color: #f7e1d7;
+}
+
+/* Style the restaurant name heading */
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  color: #9c2a00;
+  margin-top: 20px;
+}
+
+/* Style the "The Best of the Best" subheading */
+h2 {
+  font-size: 24px;
+  text-align: center;
+  color: #9c2a00;
+  margin-top: 10px;
+}
+
+/* Style the menu images */
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+.menu img {
+  width: 500px;
+  height: auto;
+  margin: 10px;
+  border: 5px solid #ffffff;
+  box-shadow: 0 0 10px #ffffff;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+.menu img:hover {
+  transform: scale(1.05);
+}
+
+/* Style the footer */
+footer {
+  background-color: #ffffff;
+  color: #444444;
+  padding: 30px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Style the buttons in the footer */
+button {
+  background-color: #9c2a00;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #d93c00;
+}
+.full-screen-image img {
+  max-width: 100%;
+  max-height: 100%;
+}

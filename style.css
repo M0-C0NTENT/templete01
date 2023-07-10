@@ -25,6 +25,9 @@ body {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  max-height: 100vh; /* Adjust as needed */
+  max-width: 100%; /* Adjust as needed */
+  overflow: auto;
 }
 
 #restaurant-name {

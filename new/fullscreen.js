@@ -1,4 +1,3 @@
-// Open the fullscreen modal when an image is clicked or touched
 var images = document.getElementsByClassName('image-list-item');
 var modal = document.getElementById('fullscreen-modal');
 var modalContent = document.getElementsByClassName('modal-content')[0];
@@ -8,6 +7,7 @@ var rightArrow = document.getElementsByClassName('right-arrow')[0];
 var closeModal = document.getElementsByClassName('close')[0];
 var touchStartX = 0;
 var touchEndX = 0;
+var touchThreshold = 50; // Adjust as needed
 
 for (var i = 0; i < images.length; i++) {
   images[i].addEventListener('click', function() {
@@ -15,11 +15,11 @@ for (var i = 0; i < images.length; i++) {
   });
 
   images[i].addEventListener('touchstart', function(event) {
-    touchStartX = event.changedTouches[0].screenX;
+    touchStartX = event.touches[0].clientX;
   });
 
   images[i].addEventListener('touchend', function(event) {
-    touchEndX = event.changedTouches[0].screenX;
+    touchEndX = event.changedTouches[0].clientX;
     handleTouchSwipe(this, touchStartX, touchEndX);
   });
 }
@@ -52,7 +52,7 @@ function navigateToPreviousImage() {
   var currentIndex = Array.from(images).findIndex(function(image) {
     return image.src === currentImage;
   });
-  
+
   var previousIndex = (currentIndex - 1 + images.length) % images.length;
   fullscreenImage.src = images[previousIndex].src;
 }
@@ -63,18 +63,21 @@ function navigateToNextImage() {
   var currentIndex = Array.from(images).findIndex(function(image) {
     return image.src === currentImage;
   });
-  
+
   var nextIndex = (currentIndex + 1) % images.length;
   fullscreenImage.src = images[nextIndex].src;
 }
 
 // Handle touch swipe to navigate images
 function handleTouchSwipe(imageElement, startX, endX) {
-  var touchThreshold = 50; // Minimum distance to trigger swipe
-  
   if (endX - startX > touchThreshold) {
     navigateToPreviousImage();
   } else if (startX - endX > touchThreshold) {
     navigateToNextImage();
   }
 }
+
+// Prevent scrolling on the x-axis in the fullscreen modal
+modalContent.addEventListener('touchmove', function (event) {
+  event.preventDefault();
+}, { passive: false });

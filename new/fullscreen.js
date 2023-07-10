@@ -29,11 +29,17 @@ closeModal.addEventListener('click', closeFullscreen);
 
 // Navigate to the previous image
 leftArrow.addEventListener('click', navigateToPreviousImage);
-leftArrow.addEventListener('touchstart', navigateToPreviousImage);
+leftArrow.addEventListener('touchstart', function(event) {
+  event.preventDefault(); // Prevents double triggering on touch devices
+  navigateToPreviousImage();
+});
 
 // Navigate to the next image
 rightArrow.addEventListener('click', navigateToNextImage);
-rightArrow.addEventListener('touchstart', navigateToNextImage);
+rightArrow.addEventListener('touchstart', function(event) {
+  event.preventDefault(); // Prevents double triggering on touch devices
+  navigateToNextImage();
+});
 
 // Open the fullscreen modal with the clicked image
 function openFullscreen(imageSrc) {

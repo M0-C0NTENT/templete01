@@ -55,8 +55,8 @@
   .fullscreen-image {
     width: auto;
     height: auto;
-    max-width: 440px;
-    max-height: 798px;
+    max-width: auto;
+    max-height: auto;
     object-fit: contain;
     display: block;
     margin: 0 auto;

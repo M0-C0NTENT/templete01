@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Restaurant Menu</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Restaurant Page</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="fullscreen.css">
 </head>
 <body>
-  <h1 style="text-align: center;">Restaurant Name</h1>
-  <h2 style="text-align: center;">The Best of the Best</h2>
-  <div class="menu">
-    <img src="img0.png" alt="Menu 1">
-    <img src="img1.png" alt="Menu 2">
-    <img src="img2.png" alt="Menu 3">
-    <img src="img3.png" alt="Menu 4">
-    <img src="img4.png" alt="Menu 5">
-    <img src="img5.png" alt="Menu 6">
+  <div class="sh-background" ng-style="getBackgroundStyles()" style="height: 500px; background-color: rgb(246, 163, 93); color: rgb(255, 255, 255);"></div>
+  <div id="container">
+    <h1 id="restaurant-name">zacks</h1>
+    <div style="margin-top: 8%; font-size: 14px; color: #FFFFFF;">
+      <p>
+        اكتر من ٤ مليون مصري بيثقوا في زاكس
+      </p>
+    </div>
+    <a href="https://www.facebook.com/profile.php?id=100008665448159" id="learn-more-button">Learn More</a>
+    <div id="image-list">
+      <img class="image-list-item" src="facebook.png" alt="Facebook">
+      <img class="image-list-item" src="instagram.png" alt="Instagram">
+      <img class="image-list-item" src="twitter.png" alt="Twitter">
+    </div>
   </div>
-  <footer>
-    <button>Contact</button>
-    <button>About Us</button>
-    <button>Learn More</button>
-  </footer>
-  <script src="index.js"></script>
+  <div ng-show="view.code.website" class="sh-page__website-container">
+    <a class="sh-page__website ng-binding" href="https://www.facebook.com/profile.php?id=100008665448159" target="_blank">www.facebook.com</a>
+  </div>
+  
+  <!-- Fullscreen modal -->
+  <div id="fullscreen-modal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <span class="nav-arrow left-arrow">&lt;</span>
+      <img class="fullscreen-image" src="" alt="">
+      <span class="nav-arrow right-arrow">&gt;</span>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+  <script src="fullscreen.js"></script>
 </body>
 </html>

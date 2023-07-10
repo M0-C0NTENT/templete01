@@ -1,74 +1,79 @@
-/* Set the background color of the body to a light beige */
 body {
-  background-color: #f7e1d7;
+  height: 100%;
+  color: rgb(130, 132, 143);
+  font-size: 14px;
+  line-height: 1;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0px;
+  padding: 0px;
+  background: rgb(247, 247, 247);
+  overscroll-behavior: none;
 }
 
-/* Style the restaurant name heading */
-h1 {
-  font-size: 48px;
-  font-weight: bold;
-  text-align: center;
-  color: #9c2a00;
-  margin-top: 20px;
+.sh-background {
+  height: 500px;
+  z-index: -1;
+  position: absolute;
+  top: -200px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  transform: skewY(-10deg);
 }
 
-/* Style the "The Best of the Best" subheading */
-h2 {
-  font-size: 24px;
+#container {
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
-  color: #9c2a00;
+}
+
+#restaurant-name {
+  margin-top: 50px;
+  font-size: 20px;
+  color: #FFFFFF;
+
+}
+
+
+#learn-more-button {
+  display: inline-block;
+  margin-top: 0px;
+  padding: 15px 30px;
+  background-color: #FFFFFF;
+  color: #FFA500;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.sh-page__website {
+  opacity: 0.8;
+  color: rgb(121, 125, 128);
+  padding: 0px;
+  margin: 0px;
+}
+.sh-page__website-container {
+  text-align: center;
+  margin: 10px auto;
+}
+#image-list {
   margin-top: 10px;
-}
-
-/* Style the menu images */
-.menu {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
 }
 
-
-.menu img {
-  width: 500px;
+.image-list-item {
+  display: block;
+  margin: 10px auto;
+  max-width: 506px;
   height: auto;
-  margin: 10px;
-  border: 5px solid #ffffff;
-  box-shadow: 0 0 10px #ffffff;
-  transition: transform 0.3s ease-in-out;
 }
-
-
-
-.menu img:hover {
-  transform: scale(1.05);
-}
-
-/* Style the footer */
-footer {
-  background-color: #ffffff;
-  color: #444444;
-  padding: 30px;
+.sh-bar {
+  font-size: 20px;
+  font-weight: 500;
   text-align: center;
-  margin-top: 50px;
-}
-
-/* Style the buttons in the footer */
-button {
-  background-color: #9c2a00;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  margin: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-button:hover {
-  background-color: #d93c00;
-}
-.full-screen-image img {
-  max-width: 100%;
-  max-height: 100%;
-}
+  position: relative;
+  padding: 40px 0px 15px;
+  margin: 0px;
+} 

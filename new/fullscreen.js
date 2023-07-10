@@ -9,6 +9,15 @@ var touchStartX = 0;
 var touchEndX = 0;
 var touchThreshold = 50; // Adjust as needed
 
+modalContent.addEventListener('touchstart', function(event) {
+  touchStartX = event.touches[0].clientX;
+});
+
+modalContent.addEventListener('touchend', function(event) {
+  touchEndX = event.changedTouches[0].clientX;
+  handleTouchSwipe(touchStartX, touchEndX);
+});
+
 for (var i = 0; i < images.length; i++) {
   images[i].addEventListener('click', function() {
     openFullscreen(this.src);
@@ -75,7 +84,9 @@ function navigateToNextImage() {
 }
 
 // Handle touch swipe to navigate images
-function handleTouchSwipe(imageElement, startX, endX) {
+function handleTouchSwipe(startX, endX) {
+  var touchThreshold = 50; // Minimum distance to trigger swipe
+
   if (endX - startX > touchThreshold) {
     navigateToPreviousImage();
   } else if (startX - endX > touchThreshold) {

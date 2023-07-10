@@ -4,10 +4,10 @@
   <title>Restaurant Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" type="text/css" href="fullscreen.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 </head>
 <body>
-  <div class="sh-background" ng-style="getBackgroundStyles()" style="height: 500px; background-color: rgb(246, 163, 93); color: rgb(255, 255, 255);"></div>
+  <div class="sh-background" ng-style="getBackgroundStyles()"></div>
   <div id="container">
     <h1 id="restaurant-name">zacks</h1>
     <div style="margin-top: 8%; font-size: 14px; color: #FFFFFF;">
@@ -17,25 +17,43 @@
     </div>
     <a href="https://www.facebook.com/profile.php?id=100008665448159" id="learn-more-button">Learn More</a>
     <div id="image-list">
-      <img class="image-list-item" src="facebook.png" alt="Facebook">
-      <img class="image-list-item" src="instagram.png" alt="Instagram">
-      <img class="image-list-item" src="twitter.png" alt="Twitter">
+      <a class="image-list-item" href="facebook.png" data-fancybox="gallery" data-caption="Facebook">
+        <img src="facebook.png" alt="Facebook">
+      </a>
+      <a class="image-list-item" href="instagram.png" data-fancybox="gallery" data-caption="Instagram">
+        <img src="instagram.png" alt="Instagram">
+      </a>
+      <a class="image-list-item" href="twitter.png" data-fancybox="gallery" data-caption="Twitter">
+        <img src="twitter.png" alt="Twitter">
+      </a>
       <div ng-show="view.code.website" class="sh-page__website-container">
         <a class="sh-page__website ng-binding" href="https://www.facebook.com/profile.php?id=100008665448159" target="_blank">www.facebook.com</a>
       </div>
     </div>
   </div>
-  <!-- Fullscreen modal -->
-  <div id="fullscreen-modal" class="modal">
-    <span class="close">&times;</span>
-    <div class="modal-content">
-      <span class="nav-arrow left-arrow">&lt;</span>
-      <img class="fullscreen-image" src="" alt="">
-      <span class="nav-arrow right-arrow">&gt;</span>
-    </div>
-  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('[data-fancybox="gallery"]').fancybox({
+        buttons: [
+          "zoom",
+          "slideShow",
+          "fullScreen",
+          "thumbs",
+          "close"
+        ],
+        loop: true,
+        arrows: true, // Show navigation arrows
+        infobar: true, // Show infobar (count and caption)
+        caption: function(instance, item) {
+          return $(this).find('img').attr('alt'); // Use alt attribute as the caption
+        },
+        bgColor: '#f6a35d'
+      });
+    });
+  </script>
   
-  <script src="script.js"></script>
-  <script src="fullscreen.js"></script>
 </body>
 </html>

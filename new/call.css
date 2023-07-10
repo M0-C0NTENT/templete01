@@ -2,7 +2,6 @@
 .call-buton .cc-calto-action-ripple {
 	z-index: 99999;
 	position: fixed;
-	right: 4.5rem;
 	bottom: 8rem;
 	background: #ec8b00;
 	width: 4rem;

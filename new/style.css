@@ -79,7 +79,16 @@ body {
   max-width: 50%;
 }
 
-   .map-container {
+ .map-container {
+        display: flex;
+        justify-content: center;
+        overflow: hidden; /* Prevent content from overflowing */
+    }
+    iframe {
+        margin: 0 auto; /* Set left and right margins to auto */
+        display: block; /* Ensure iframe is displayed as block element */
+        max-width: 100%; /* Limit iframe's width to the width of its container */
+        box-sizing: border-box; /* Include padding and border in the total width and height */
         margin: 10px auto;
   display: block;
   height: auto;
@@ -87,4 +96,3 @@ body {
   max-height: auto; /* Maintain the aspect ratio */
   max-width: 50%;
     }
-  

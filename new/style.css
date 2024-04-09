@@ -89,10 +89,4 @@ body {
         display: block; /* Ensure iframe is displayed as block element */
         max-width: 100%; /* Limit iframe's width to the width of its container */
         box-sizing: border-box; /* Include padding and border in the total width and height */
-        margin: 10px auto;
-  display: block;
-  height: auto;
-  width: 1012px;
-  max-height: auto; /* Maintain the aspect r0atio */
-  max-width: 50%;
     }
